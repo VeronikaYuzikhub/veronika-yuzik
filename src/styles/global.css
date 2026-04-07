@@ -1,0 +1,258 @@
+/* ─────────────────────────────────────────
+   GLOBAL  —  src/styles/global.css
+   Reset, base, layout skeleton
+   ───────────────────────────────────────── */
+
+@import './variables.css';
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  cursor: none;
+  transition: background 0.5s, color 0.5s;
+  min-height: 100vh;
+}
+
+/* ── Background canvas (Three.js) ──────── */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── Grain noise overlay ────────────────── */
+#grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px;
+}
+
+/* ── Main app container ─────────────────── */
+#app {
+  position: relative;
+  z-index: 2;
+  padding-top: 62px; /* nav height */
+}
+
+/* ── Page transition ─────────────────────── */
+.page {
+  display: none;
+  min-height: 100vh;
+  animation: pageIn 0.55s cubic-bezier(0.25, 0, 0, 1) both;
+}
+.page.active { display: block; }
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Section header ──────────────────────── */
+.page-header {
+  padding: 60px 52px 44px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.page-title {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(38px, 5vw, 66px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+.page-title em {
+  font-style: italic;
+  color: var(--blue);
+}
+
+.page-count {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--text4);
+  padding-bottom: 6px;
+}
+
+/* ── Shared footer ───────────────────────── */
+.page-footer {
+  padding: 26px 52px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--text4);
+  background: var(--nav-bg);
+  backdrop-filter: blur(14px);
+}
+.page-footer .footer-logo {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text);
+}
+
+/* ── Glass card ──────────────────────────── */
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  box-shadow: 0 4px 24px var(--glass-shadow), inset 0 1px 0 rgba(255,255,255,0.09);
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, transparent 55%);
+  pointer-events: none;
+}
+[data-theme="light"] .glass {
+  box-shadow: 0 4px 28px var(--glass-shadow), inset 0 1px 0 rgba(255,255,255,0.85);
+}
+[data-theme="light"] .glass::before {
+  background: linear-gradient(135deg, rgba(255,255,255,0.55) 0%, transparent 55%);
+}
+.glass:hover {
+  transform: translateY(-4px);
+  border-color: rgba(168,196,212,0.26);
+  box-shadow: 0 14px 52px var(--glass-shadow), inset 0 1px 0 rgba(255,255,255,0.14);
+}
+
+/* ── Buttons ─────────────────────────────── */
+.btn {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  padding: 13px 28px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all var(--transition);
+}
+.btn-primary {
+  background: var(--blue);
+  color: #fff;
+  box-shadow: 0 4px 22px rgba(168,196,212,0.28);
+}
+.btn-primary:hover {
+  background: var(--blue2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(168,196,212,0.38);
+}
+.btn-ghost {
+  background: var(--glass);
+  color: var(--text2);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+.btn-ghost:hover {
+  background: var(--glass2);
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+/* ── Tags ────────────────────────────────── */
+.tag-list {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 11px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text3);
+  backdrop-filter: blur(8px);
+  transition: all var(--transition-fast);
+}
+.tag:hover {
+  border-color: rgba(168,196,212,0.3);
+  color: var(--blue);
+}
+
+/* ── Eyebrow label ───────────────────────── */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.30em;
+  text-transform: uppercase;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--blue);
+}
+
+/* ── Section label (small caps) ─────────── */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--text4);
+}
+
+/* ── Skill dots ──────────────────────────── */
+.skill-dots {
+  display: flex;
+  gap: 5px;
+}
+.skill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: all var(--transition-fast);
+}
+.skill-dot.filled {
+  background: var(--blue3);
+}
+[data-theme="dark"] .skill-dot.filled {
+  background: rgba(168, 196, 212, 0.34);
+}
+.skill-row:hover .skill-dot.filled {
+  background: var(--blue);
+  box-shadow: 0 0 6px var(--blue-glow);
+}
+
+/* ── Responsive base ─────────────────────── */
+@media (max-width: 860px) {
+  .page-header { padding: 36px 22px; }
+  #app { padding-top: 62px; }
+}

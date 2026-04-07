@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veronika Yuzik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&family=Syne:wght@300;400;600&display=swap" rel="stylesheet" />
+  <script type="module" crossorigin src="/assets/index-Ph_J0xL2.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-Cuehu8jA.css">
+</head>
+<body>
+  <!-- Three.js background canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Grain texture overlay -->
+  <div id="grain"></div>
+
+  <!-- Custom cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- Shape hover tooltip -->
+  <div id="shape-tooltip">click</div>
+
+  <!-- Loading screen -->
+  <div id="loading-screen">
+    <canvas id="flower-canvas" width="300" height="300"></canvas>
+    <div id="loading-name">Veronika Yuzik</div>
+    <div id="loading-line-wrap"><div id="loading-line"></div></div>
+  </div>
+
+  <!-- Side menu overlay -->
+  <div id="side-overlay"></div>
+
+  <!-- Side menu -->
+  <nav id="side-menu">
+    <div id="side-nav-items"></div>
+    <div id="side-footer">
+      <div class="side-footer-label">contact</div>
+      <div id="side-contacts"></div>
+    </div>
+  </nav>
+
+  <!-- Top navigation -->
+  <header id="top-nav">
+    <div id="nav-logo">
+      <span class="logo-accent">V</span>eronika
+    </div>
+    <nav id="nav-pills"></nav>
+    <div id="nav-right">
+      <div id="status-badge">
+        <div id="status-dot"></div>
+        <span>available</span>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle theme">
+        <div id="toggle-track"><div id="toggle-thumb"></div></div>
+      </button>
+      <button id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page container — JS renders pages here -->
+  <main id="app"></main>
+
+</body>
+</html>
