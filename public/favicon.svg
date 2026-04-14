@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Icosahedron-style low-poly gem -->
+  <!-- Top facets -->
+  <polygon points="16,2 26,11 16,13" fill="#b4cede" opacity="0.95"/>
+  <polygon points="16,2 6,11 16,13"  fill="#c8d8e8" opacity="0.95"/>
+  <!-- Middle facets -->
+  <polygon points="26,11 16,13 24,21" fill="#cebcca" opacity="0.95"/>
+  <polygon points="6,11 8,21 16,13"   fill="#d8c8d4" opacity="0.95"/>
+  <polygon points="16,13 8,21 24,21"  fill="#baaec4" opacity="0.90"/>
+  <!-- Bottom facets -->
+  <polygon points="24,21 16,30 8,21"  fill="#c4b2c0" opacity="0.95"/>
+  <!-- Highlight -->
+  <polygon points="16,2 22,9 16,13"   fill="rgba(255,255,255,0.3)"/>
+</svg>
