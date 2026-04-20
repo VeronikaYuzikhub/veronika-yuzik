@@ -1,7 +1,4 @@
-// ─────────────────────────────────────────
-//  THEME  —  src/utils/theme.ts
-//  Light / dark toggle with localStorage
-// ─────────────────────────────────────────
+// Light / dark toggle with localStorage
 
 import type { Theme } from '@/types'
 

@@ -1,6 +1,4 @@
-// ─────────────────────────────────────────
-//  HOME PAGE  —  src/components/pages/HomePage.ts
-// ─────────────────────────────────────────
+// Home page
 
 import { PROJECTS } from '@/data'
 import { renderFooter } from '@/components/Footer'
@@ -8,14 +6,13 @@ import type { Router } from '@/utils/router'
 
 export function renderHomePage(router: Router): HTMLElement {
   const page = document.createElement('div')
-  page.id        = 'page-home'
+  page.id = 'page-home'
   page.className = 'page'
 
   page.innerHTML = `
-    <!-- ── Hero ── -->
     <section class="hero">
       <div class="hero-left">
-        <div class="eyebrow">software engineer · designer · Odesa</div>
+        <div class="eyebrow">software engineer · back-end · Odesa</div>
         <div class="hero-name">Veronika</div>
         <div class="hero-lastname">Yuzik.</div>
         <p class="hero-desc">
@@ -24,7 +21,7 @@ export function renderHomePage(router: Router): HTMLElement {
         </p>
         <div class="hero-buttons">
           <button class="btn btn-primary" id="home-see-works">See works</button>
-          <button class="btn btn-ghost"   id="home-about">About me</button>
+          <button class="btn btn-ghost" id="home-about">About me</button>
         </div>
       </div>
       <div class="hero-right">
@@ -32,7 +29,6 @@ export function renderHomePage(router: Router): HTMLElement {
       </div>
     </section>
 
-    <!-- ── Featured preview ── -->
     <div class="home-preview">
       <div class="eyebrow section-label">featured work</div>
       <div class="preview-grid">
@@ -54,7 +50,6 @@ export function renderHomePage(router: Router): HTMLElement {
     ${renderFooter()}
   `
 
-  // ── Bind buttons ────────────────────────
   page.querySelector('#home-see-works')
     ?.addEventListener('click', () => router.navigate('works'))
 

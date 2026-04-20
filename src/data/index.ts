@@ -1,15 +1,10 @@
-// ─────────────────────────────────────────
-//  DATA  —  src/data/index.ts
-//  All portfolio content in one place.
-//  Edit this file to update the site.
-// ─────────────────────────────────────────
+// Portfolio content — edit this file to update the site
 
 import type {
   NavItem, Project, RoadmapItem,
   SkillGroup, Certificate, LowPolyShapeConfig
 } from '@/types'
 
-// ── Navigation ──────────────────────────
 export const NAV_ITEMS: NavItem[] = [
   { id: 'home',         label: 'Home',         index: 0 },
   { id: 'works',        label: 'Works',        index: 1 },
@@ -19,7 +14,6 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'about',        label: 'About',        index: 5 },
 ]
 
-// ── Projects ────────────────────────────
 export const PROJECTS: Project[] = [
   {
     id: 'in-progress',
@@ -121,7 +115,6 @@ export const PROJECTS: Project[] = [
   },
 ]
 
-// ── Roadmap ─────────────────────────────
 export const ROADMAP: RoadmapItem[] = [
   {
     year: '2014–2023',
@@ -129,22 +122,22 @@ export const ROADMAP: RoadmapItem[] = [
     subtitle: 'Studied with excellence · Olympiad winner\nPresident of the Lyceum 2021–2023',
   },
   {
-    year: '2023',
+    year: '2023–2027',
     title: 'VSP OTFC ONTU',
     subtitle: 'Computer Engineering · Junior Bachelor\nEntrance 200/200 · budget place',
   },
   {
-    year: '2025 Jul',
+    year: '2025 Jul – Sep',
     title: 'Davydov Consulting',
     subtitle: 'Full-stack Developer · Full-time\nGreater London, United Kingdom',
   },
   {
-    year: '2025 Oct',
+    year: '2025 Oct – current',
     title: 'Logika School',
     subtitle: 'Python Mentor & Teacher · part-time\nWeekend classes',
   },
   {
-    year: '2025 Dec',
+    year: '2025 Dec – current',
     title: 'S-Engineering',
     subtitle: 'Software Engineer (C#) · part-time\nOdessa, Ukraine (international)',
   },
@@ -156,16 +149,15 @@ export const ROADMAP: RoadmapItem[] = [
   },
 ]
 
-// ── Skills ──────────────────────────────
 export const SKILL_GROUPS: SkillGroup[] = [
   {
     category: 'Engineering',
     items: [
       { name: 'C#',                    level: 5 },
-      { name: 'Python',               level: 4 },
-      { name: 'Java · Spring Boot',   level: 4 },
-      { name: 'JavaScript · Node.js', level: 3 },
-      { name: 'SQL · Databases',      level: 3 },
+      { name: 'Python',                level: 4 },
+      { name: 'Java · Spring Boot',    level: 4 },
+      { name: 'JavaScript · Node.js',  level: 3 },
+      { name: 'SQL · Databases',       level: 3 },
     ],
   },
   {
@@ -198,24 +190,23 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
 ]
 
-// ── Certificates ────────────────────────
 export const CERTIFICATES: Certificate[] = [
-  { id: 'ioai-ukraine',       icon: '', name: 'IOAI Ukraine — National Selection',  issuer: 'IOAI Ukraine',        year: '2026', imageUrl: '/img/certs/ioai.png'          },
-  { id: 'python1-ioai',       icon: '', name: 'Python 1 IOAI Spain',                issuer: 'Leagues of Code',     year: '2026', imageUrl: '/img/certs/python1_ioai.png'  },
-  { id: 'python2-ioai',       icon: '', name: 'Python 2 IOAI Spain',                issuer: 'Leagues of Code',     year: '2026', imageUrl: '/img/certs/python2_ioai.png'  },
-  { id: 'itvdn-dotnet',        icon: '', name: '.Net Part II',                       issuer: 'ITVDN',               year: '2026', imageUrl: '/img/certs/itvdn_dotnet.png'  },
-  { id: 'itvdn-csharp',       icon: '', name: 'Interview questions about C#',        issuer: 'ITVDN',               year: '2026', imageUrl: '/img/certs/itvdn_csharp.png'  },
-  { id: 'itvdn-java',         icon: '', name: 'Java Basics',                         issuer: 'ITVDN',               year: '2026', imageUrl: '/img/certs/itvdn_java.png'    },
-  { id: 'itvdn-git',          icon: '', name: 'Git Basics',                          issuer: 'ITVDN',               year: '2026', imageUrl: '/img/certs/itvdn_git.png'     },
-  { id: 'python-mentor',      icon: '', name: 'Python Mentor & Teacher',             issuer: 'Logika School',       year: '2026', imageUrl: '/img/certs/logika_python.png' },
-  { id: 'ms-business-apps',   icon: '', name: 'Dynamics 365 Community',              issuer: 'Microsoft',           year: '2025', imageUrl: '/img/certs/ms_dynamics.png'   },
-  { id: 'html-css-goit',      icon: '', name: 'HTML · CSS',                          issuer: 'GoIT',                year: '2024', imageUrl: ''                             },
-  { id: 'js-prometheus',      icon: '', name: 'JS + HTML/CSS',                       issuer: 'Prometheus',          year: '2025', imageUrl: '/img/certs/prometheus.png'    },
+  { id: 'itvdn-dotnet',      icon: '', name: '.Net Part II',                        issuer: 'ITVDN',           year: '2026', imageUrl: '/img/certs/itvdn_dotnet.png'  },
+  { id: 'itvdn-csharp',      icon: '', name: 'Interview questions about C#',        issuer: 'ITVDN',           year: '2026', imageUrl: '/img/certs/itvdn_csharp.png'  },
+  { id: 'itvdn-java',        icon: '', name: 'Java Basics',                         issuer: 'ITVDN',           year: '2026', imageUrl: '/img/certs/itvdn_java.png'    },
+  { id: 'itvdn-git',         icon: '', name: 'Git Basics',                          issuer: 'ITVDN',           year: '2026', imageUrl: '/img/certs/itvdn_git.png'     },
+  { id: 'python-mentor',     icon: '', name: 'Python Mentor & Teacher',             issuer: 'Logika School',   year: '2026', imageUrl: '/img/certs/logika_python.png' },
+  { id: 'ioai-ukraine',      icon: '', name: 'IOAI Ukraine — National Selection',   issuer: 'IOAI Ukraine',    year: '2026', imageUrl: '/img/certs/ioai.png'          },
+  { id: 'python1-ioai',      icon: '', name: 'Python 1 IOAI Spain',                issuer: 'Leagues of Code', year: '2026', imageUrl: '/img/certs/python1_ioai.png'  },
+  { id: 'python2-ioai',      icon: '', name: 'Python 2 IOAI Spain',                issuer: 'Leagues of Code', year: '2026', imageUrl: '/img/certs/python2_ioai.png'  },
+  { id: 'math101-loc',       icon: '', name: 'Math 101',                            issuer: 'Leagues of Code', year: '2026', imageUrl: '/img/certs/math101_loc.png'   },
+  { id: 'html-css-goit',     icon: '', name: 'HTML · CSS',                          issuer: 'GoIT',            year: '2024', imageUrl: ''                             },
+  { id: 'js-prometheus',     icon: '', name: 'JS + HTML/CSS',                       issuer: 'Prometheus',      year: '2025', imageUrl: '/img/certs/prometheus.png'    },
+  { id: 'ms-business-apps',  icon: '', name: 'Dynamics 365 Community',              issuer: 'Microsoft',       year: '2025', imageUrl: '/img/certs/ms_dynamics.png'   },
 ]
 
-// ── Low-poly 3D Background Shapes ───────
 export const BG_SHAPES: LowPolyShapeConfig[] = [
-  { type: 'icosahedron', detail: 1, color: 0xb4cede, x:  4.5, y:  0.5, z:  -3, scale: 2.20, opacity: 0.58 }, // hero large
+  { type: 'icosahedron', detail: 1, color: 0xb4cede, x:  4.5, y:  0.5, z:  -3, scale: 2.20, opacity: 0.58 },
   { type: 'octahedron',  detail: 1, color: 0xd0b4c4, x:  7.8, y: -0.8, z:  -5, scale: 1.65, opacity: 0.54 },
   { type: 'tetrahedron', detail: 2, color: 0xb8d0e4, x: -4.5, y: -1.5, z:  -6, scale: 1.90, opacity: 0.52 },
   { type: 'icosahedron', detail: 0, color: 0xdcc0cc, x:  9.5, y:  3.0, z:  -4, scale: 1.45, opacity: 0.56 },

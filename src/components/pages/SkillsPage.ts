@@ -1,7 +1,4 @@
-// ─────────────────────────────────────────
-//  SKILLS PAGE  —  src/components/pages/SkillsPage.ts
-//  Tech stack + human languages
-// ─────────────────────────────────────────
+// Skills page — tech stack + human languages
 
 import { SKILL_GROUPS } from '@/data'
 import { renderFooter } from '@/components/Footer'
@@ -14,7 +11,7 @@ function renderDots(level: number): string {
 
 export function renderSkillsPage(): HTMLElement {
   const page = document.createElement('div')
-  page.id        = 'page-skills'
+  page.id = 'page-skills'
   page.className = 'page'
 
   page.innerHTML = `

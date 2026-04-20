@@ -1,13 +1,10 @@
-// ─────────────────────────────────────────
-//  NAV  —  src/components/Nav.ts
-//  Renders top nav pills + side menu
-// ─────────────────────────────────────────
+// Navigation — top nav pills + side menu
 
 import { NAV_ITEMS } from '@/data'
 import type { Router } from '@/utils/router'
 
 export class Nav {
-  private router:  Router
+  private router: Router
   private sideOpen = false
 
   constructor(router: Router) {
@@ -21,7 +18,6 @@ export class Nav {
       ?.addEventListener('click', () => this.router.navigate('home'))
   }
 
-  // ── Top pill nav ─────────────────────────
   private renderPills(): void {
     const container = document.getElementById('nav-pills')!
     container.innerHTML = NAV_ITEMS.map(item => `
@@ -39,7 +35,6 @@ export class Nav {
     })
   }
 
-  // ── Side menu ────────────────────────────
   private renderSideMenu(): void {
     const navContainer = document.getElementById('side-nav-items')!
     navContainer.innerHTML = NAV_ITEMS.map((item, i) => `
@@ -56,15 +51,13 @@ export class Nav {
       })
     })
 
-    // Contacts
     document.getElementById('side-contacts')!.innerHTML = `
-      <a href="https://github.com/VeronikaYuzikhub"                      class="side-contact-link" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/veronikayuzik-9292b735b"       class="side-contact-link" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://t.me/ccccuddlies"                                  class="side-contact-link" target="_blank" rel="noopener">Telegram</a>
-      <a href="mailto:veronikauzik479@gmail.com"                          class="side-contact-link">Email</a>
+      <a href="https://github.com/VeronikaYuzikhub" class="side-contact-link" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/veronika-yuzik-9292b735b" class="side-contact-link" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://t.me/ccccuddlies" class="side-contact-link" target="_blank" rel="noopener">Telegram</a>
+      <a href="mailto:veronikauzik479@gmail.com" class="side-contact-link">Email</a>
     `
 
-    // Close on overlay click
     document.getElementById('side-overlay')
       ?.addEventListener('click', () => this.closeSide())
   }

@@ -1,14 +1,11 @@
-// ─────────────────────────────────────────
-//  ROADMAP PAGE  —  src/components/pages/RoadmapPage.ts
-//  Personal journey / career timeline
-// ─────────────────────────────────────────
+// Roadmap page — personal journey / career timeline
 
 import { ROADMAP } from '@/data'
 import { renderFooter } from '@/components/Footer'
 
 export function renderRoadmapPage(): HTMLElement {
   const page = document.createElement('div')
-  page.id        = 'page-roadmap'
+  page.id = 'page-roadmap'
   page.className = 'page'
 
   page.innerHTML = `

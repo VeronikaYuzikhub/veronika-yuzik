@@ -1,7 +1,4 @@
-// ─────────────────────────────────────────
-//  CERTIFICATES PAGE
-//  src/components/pages/CertificatesPage.ts
-// ─────────────────────────────────────────
+// Certificates page
 
 import { CERTIFICATES } from '@/data'
 import { renderFooter } from '@/components/Footer'
@@ -9,7 +6,7 @@ import type { Lightbox } from '@/components/Lightbox'
 
 export function renderCertificatesPage(lightbox: Lightbox): HTMLElement {
   const page = document.createElement('div')
-  page.id        = 'page-certificates'
+  page.id = 'page-certificates'
   page.className = 'page'
 
   page.innerHTML = `
@@ -19,7 +16,6 @@ export function renderCertificatesPage(lightbox: Lightbox): HTMLElement {
 
     <div class="certs-layout">
 
-      <!-- Left panel — decorative -->
       <div style="padding:52px 48px;border-right:1px solid var(--border);
                   display:flex;flex-direction:column;justify-content:center;align-items:center;
                   gap:24px;">
@@ -53,7 +49,6 @@ export function renderCertificatesPage(lightbox: Lightbox): HTMLElement {
         </div>
       </div>
 
-      <!-- Certificates grid right -->
       <div class="certs-grid-panel">
         <div class="section-label">Certificates & Achievements</div>
         <div class="certs-grid" style="margin-top:24px;" id="certs-grid">
@@ -69,7 +64,6 @@ export function renderCertificatesPage(lightbox: Lightbox): HTMLElement {
             </div>
           `).join('')}
 
-          <!-- Add placeholder -->
           <div class="cert-add-placeholder">
             <span style="font-size:20px;opacity:0.4">+</span>
             <span>Add certificate</span>
@@ -82,14 +76,13 @@ export function renderCertificatesPage(lightbox: Lightbox): HTMLElement {
     ${renderFooter()}
   `
 
-  // ── Click cert → lightbox (gallery of all certs with images) ───
   const certsWithImages = CERTIFICATES
     .filter(c => c.imageUrl)
     .map(c => ({ src: c.imageUrl!, alt: `${c.name} — ${c.issuer} ${c.year}` }))
 
   page.querySelectorAll<HTMLElement>('.cert-card').forEach(card => {
     card.addEventListener('click', () => {
-      const id   = card.dataset.cert!
+      const id = card.dataset.cert!
       const cert = CERTIFICATES.find(c => c.id === id)!
       if (!cert.imageUrl) return
       const startIdx = certsWithImages.findIndex(i => i.src === cert.imageUrl)

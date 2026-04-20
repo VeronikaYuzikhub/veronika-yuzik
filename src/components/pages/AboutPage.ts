@@ -1,13 +1,11 @@
-// ─────────────────────────────────────────
-//  ABOUT PAGE  —  src/components/pages/AboutPage.ts
-// ─────────────────────────────────────────
+// About page
 
 import { renderFooter } from '@/components/Footer'
 import type { Router } from '@/utils/router'
 
 export function renderAboutPage(router: Router): HTMLElement {
   const page = document.createElement('div')
-  page.id        = 'page-about'
+  page.id = 'page-about'
   page.className = 'page'
 
   page.innerHTML = `
@@ -17,7 +15,6 @@ export function renderAboutPage(router: Router): HTMLElement {
 
     <div class="about-layout">
 
-      <!-- Text left -->
       <div class="about-text">
         <p>
           Software engineering student at <em>VSP OTFC ONTU, Odesa</em> —
@@ -44,7 +41,6 @@ export function renderAboutPage(router: Router): HTMLElement {
         </div>
       </div>
 
-      <!-- Info right -->
       <div>
         <div class="section-label" style="margin-bottom:20px;">Quick info</div>
         <div style="display:flex;flex-direction:column;gap:0;">
@@ -87,7 +83,7 @@ export function renderAboutPage(router: Router): HTMLElement {
           </div>
           <div class="skill-row">
             <span class="skill-name">LinkedIn</span>
-            <a href="https://www.linkedin.com/in/veronikayuzik-9292b735b" target="_blank" rel="noopener"
+            <a href="https://www.linkedin.com/in/veronika-yuzik-9292b735b" target="_blank" rel="noopener"
                style="font-family:var(--font-mono);font-size:10px;color:var(--blue);
                       text-decoration:none;letter-spacing:0.08em;">
               veronikayuzik
